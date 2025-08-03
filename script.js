@@ -138,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showScreen('quiz');
         displayQuestion();
     }
-
     function displayQuestion() {
         choicesContainer.innerHTML = '';
         feedbackContainer.innerHTML = '';
@@ -147,7 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalQuestions = (currentLevel === 'maitr') ? 25 : 20;
         progressText.innerText = `🎬 Ερώτηση ${currentQuestionIndex + 1} / ${Math.min(questions.length, totalQuestions)}`;
         quoteText.innerText = `"${question.quote}"`;
-        question.choices.forEach(choice => {
+        
+        // Ανακάτεμα των επιλογών πριν την εμφάνιση
+        const shuffledChoices = [...question.choices].sort(() => Math.random() - 0.5);
+        
+        shuffledChoices.forEach(choice => {
             const button = document.createElement('button');
             button.innerText = choice;
             button.classList.add('choice-btn');
