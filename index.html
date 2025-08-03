@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κλακέτα και Πάμε</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lobster&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1 class="title-font">Κλακέτα και Πάμε!</h1>
+                <p>Νομίζεις ότι τα θυμάσαι όλα από τον παλιό ελληνικό κινηματογράφο; Διάλεξε επίπεδο και απόδειξέ το!</p>
+                <button id="start-btn">Έναρξη Παιχνιδιού</button>
+            </div>
+        </div>
+
+        <div id="level-select-screen" class="screen">
+            <div class="header-nav">
+                <button id="back-to-welcome-btn" class="nav-btn">⬅️ Πίσω</button>
+            </div>
+            <h2 class="title-font">Διάλεξε Επίπεδο</h2>
+            <div class="level-buttons">
+                <button class="level-btn" data-level="komparsos">Κομπάρσος</button>
+                <button class="level-btn" data-level="protagonistis">Πρωταγωνιστής</button>
+                <button class="level-btn" data-level="skinothetis">Σκηνοθέτης</button>
+                <button class="level-btn" data-level="maitr">Ματρ του Είδους</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div id="progress-container">
+                <p id="progress-text">🎬 Ερώτηση 1 / 20</p>
+                <button id="exit-quiz-btn" title="Έξοδος στην επιλογή επιπέδου" class="nav-btn-icon">🏠</button>
+            </div>
+            <div id="quote-container">
+                <p id="quote-text">Εδώ θα εμφανιστεί η ατάκα...</p>
+            </div>
+            <div id="choices-container" class="choices">
+            </div>
+            <div id="feedback-container">
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <img id="award-image" src="2.jpg" alt="Χρυσή Κλακέτα Βραβείο">
+            
+            <h2 class="title-font">Αποτέλεσμα</h2>
+            <p id="score-text">🎥 Απάντησες σωστά σε 18 από τις 20 ερωτήσεις! 🎥</p>
+            <p id="final-message">🏆 Είσαι πραγματικός Μαιτρ του είδους! Συγχαρητήρια! 🏆</p>
+            <div class="results-nav">
+                <button id="play-again-btn">Παίξε Ξανά</button>
+                <button id="back-to-home-btn">Αρχική Οθόνη</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>✨✍️ Δημιουργία/Επιμέλεια: Παναγιώτης Δόμβρος, Εκπαιδευτικός Αγγλικής Γλώσσας και Θεατρολόγος © 2025✍️✨</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

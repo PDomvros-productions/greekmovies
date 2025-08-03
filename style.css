@@ -1,0 +1,205 @@
+/* Ορισμός μεταβλητών για τα χρώματα και τις γραμματοσειρές */
+:root {
+    --bg-color: #F5EFE6;
+    --text-color: #3D3B36;
+    --accent-color: #A62626;
+    --btn-hover-bg: #c0392b;
+    --correct-color: #27ae60;
+    --incorrect-color: #e74c3c;
+    --font-title: 'Lobster', cursive;
+    --font-body: 'Roboto Slab', serif;
+    --font-quote: 'Caveat', cursive;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 0;
+    text-align: center;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+#app-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.55);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Διαχείριση οθονών */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* Κουμπιά Πλοήγησης */
+.header-nav {
+    text-align: left;
+    margin-bottom: -20px;
+}
+.nav-btn {
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+.nav-btn:hover {
+    background: var(--text-color);
+    color: white;
+}
+#progress-container {
+    position: relative;
+    padding: 0 40px;
+}
+.nav-btn-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    color: #333;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.nav-btn-icon:hover {
+    opacity: 1;
+}
+
+/* Οθόνη Εισαγωγής */
+#welcome-screen .welcome-content { padding: 20px; }
+h1, h2 {
+    font-family: var(--font-title);
+    color: var(--accent-color);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: none;
+}
+#welcome-screen p {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Κύρια Κουμπιά */
+button {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    text-shadow: none;
+}
+button:hover {
+    background-color: var(--btn-hover-bg);
+    transform: translateY(-2px);
+}
+.level-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Οθόνη Παιχνιδιού */
+#quote-container {
+    margin: 15px 0;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#quote-text {
+    font-family: var(--font-quote);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.4;
+    text-shadow: none;
+}
+.choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+#feedback-container {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: bold;
+}
+#feedback-container.correct { background-color: #e8f5e9; }
+#feedback-container.incorrect { background-color: #ffebee; }
+
+/* Οθόνη Αποτελεσμάτων */
+#score-text { font-size: 1.5rem; font-weight: bold; }
+#final-message { font-size: 1.2rem; }
+#award-image {
+    display: none;
+    width: 100%; /* Προσθήκη για καλύτερη απόκριση */
+    max-width: 180px; /* Ορίζει το μέγιστο πλάτος */
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+.results-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4); 
+}
+footer p {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Βελτιστοποίηση για Κινητά */
+@media (max-width: 600px) {
+    #app-container {
+        padding: 15px;
+        width: 95%;
+    }
+    h1, h2 { font-size: 2.5rem; }
+    #quote-text { font-size: 2rem; }
+    .choices { grid-template-columns: 1fr; }
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
